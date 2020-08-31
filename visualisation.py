@@ -4,7 +4,7 @@ from pandas import DataFrame
 import json
 import seaborn as sns
 import matplotlib.pyplot as plt
-
+import config
 
 app = Flask(__name__) 
 api = Api(app) 
@@ -38,7 +38,24 @@ class Visualise(Resource):
         
 @app.route('/')
 def index():
-    return render_template("index.html")
+    item = {
+        "acc": config.model_acc,
+        "cpu_ram": config.cpu_ram_util,
+        "gpu_ram": config.gpu_ram_util,
+        "latency":config.latency,
+        "batch_size":config.batch_size,
+        "avg_fps":config.avg_fps,
+        "num_cams":config.num_cams,
+        "dataset_model_version" : config.dataset_model_version,
+        "infer_framework" : config.infer_framework,
+        "infer_lang" : config.infer_lang,
+        "dataset_samples" :config.dataset_samples,
+        "trained_model_version" : config.trained_model_version,
+        "precision" : config.precision,
+        "recall" : config.recall,
+        "avg_accuracy": config.avg_accuracy
+    }
+    return render_template("index.html", item = item)
 
 api.add_resource(Visualise, '/')
 
