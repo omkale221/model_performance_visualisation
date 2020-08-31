@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Model Performance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="height:1500px">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Model Performance</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Windows</a></li>
+      <li><a href="#">Linux</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container" style="margin-top:50px">
+
+<div class="col-sm-12">
+
+    <div class="col-sm-4">
+
+    <h3>GPU RAM UTIL = <span class="label label-success">3256</span></h3>
+        <h3>CPU RAM UTIL =<span class="label label-success">1258</span></h3>
+    </div>
+
+    <div class="col-sm-4">
+        <h3>     LATENCY  =  <span class="label label-success">20</span></h3>
+         <h3>  BATCH SIZE = <span class="label label-success">1</span></h3>
+    </div>
+
+
+    <div class="col-sm-4">
+
+        <h3>   AVERAGE FPS =  <span class="label label-success">32</span></h3>
+        <h3>  NUMBER OF CAMERAS =<span class="label label-success">2</span></h3>
+    </div>
+</div>
+
+<div class="col-sm-12">
+    <div class="col-sm-6">
+        <img src="{{ url_for('static', filename="acc.png" ) }}" class="rounded" alt="accuracy">
+        
+    </div>
+    <div class="col-sm-6">
+        <img src="{{ url_for('static', filename="per.png" ) }}" class="rounded" alt="performance">
+    </div>
+</div>
+
+</div>
+</body>
+</html>
+
