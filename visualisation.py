@@ -45,7 +45,7 @@ class Visualise(Resource):
 @app.route('/')
 def index():
     with open('model_param.json') as json_file:
-        item = json.load(json_file)
+        item = json.load(json_file)	#exported json from post is loaded into item
 
     print(item)
 
@@ -66,7 +66,7 @@ def index():
     #     "recall" : config.recall,
     #     "avg_accuracy": config.avg_accuracy
     # }
-    return render_template("index.html", item = item)
+    return render_template("index.html", item = item)	#index and json returned 
 
 api.add_resource(Visualise, '/')
 
